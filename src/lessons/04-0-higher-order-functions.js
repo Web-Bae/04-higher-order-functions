@@ -109,22 +109,6 @@ bae.map = function (collection, iterator) {
   return mapped;
 };
 
-// Determine if the array or object contains a given value (using `===`).
-bae.contains = function (collection, target) {
-  // TIP: Many iteration problems can be most easily expressed in
-  // terms of reduce().
-  return bae.reduce(
-    collection,
-    function (wasFound, item) {
-      if (wasFound) {
-        return true;
-      }
-      return item === target;
-    },
-    false
-  );
-};
-
 // Reduces an array or object to a single value by repetitively calling
 // iterator(accumulator, item) for each item. accumulator should be
 // the return value of the previous iterator call.
@@ -154,4 +138,20 @@ bae.reduce = function (collection, iterator, accumulator) {
     }
   });
   return accumulator;
+};
+
+// Determine if the array or object contains a given value (using `===`).
+bae.contains = function (collection, target) {
+  // TIP: Many iteration problems can be most easily expressed in
+  // terms of reduce().
+  return bae.reduce(
+    collection,
+    function (wasFound, item) {
+      if (wasFound) {
+        return true;
+      }
+      return item === target;
+    },
+    false
+  );
 };
